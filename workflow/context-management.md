@@ -3,6 +3,7 @@
 ## Contents
 
 - [Locate the store](#locate-the-store)
+- [Proven knowledge](#proven-knowledge)
 - [Find the task](#find-the-task)
 - [Report attachment](#report-attachment)
 - [Root index](#root-index)
@@ -20,6 +21,7 @@ Use this structure:
 ```text
 .miical_code/
 ├── INDEX.md
+├── KNOWLEDGE.md
 └── <task-id>/
     ├── INDEX.md
     ├── pitfalls/
@@ -60,10 +62,48 @@ becomes blocked, even if later commands change working directory. Never search
 above the Git root or scan unrelated filesystem locations for another
 `.miical_code`.
 
+## Proven knowledge
+
+Keep `.miical_code/KNOWLEDGE.md` as the selected store's ranked entry point for
+knowledge that has proved reusable across work. Read it immediately after
+selecting the store and before reading the root task index. Initialize it when
+creating a store. If an existing store lacks it, create it before continuing
+work that uses that store.
+
+Use this format:
+
+```markdown
+# Proven Knowledge
+
+| Uses | Last Used | Type | Item | Effect |
+|---:|---|---|---|---|
+| 3 | 2026-07-18 17:44:30 UTC | pitfall | [Arena env density](run-recap/pitfalls/arena-env-density.md) | Reduced simulator density |
+```
+
+`Type` must be `pitfall`, `playbook`, or `script`. `Item` links to the owning
+task artifact; that artifact remains the source of truth. Keep `Effect` within
+50 characters and describe the decision or result that made the reuse useful.
+Do not copy the artifact's content into this index.
+
+Add a source with `Uses` set to 1 only after it materially changes the current
+work and current evidence confirms the reuse was effective. Increment an
+existing source only under the same condition. Reading, matching, citing, or
+attempting an unsuccessful reuse does not count. Count one source at most once
+per work item: an attached task is one item across all continuations; without
+an attachment, one user-requested change is one item.
+
+Keep at most 50 rows, ordered by `Uses` descending, then `Last Used` descending,
+then link ascending. When adding a row above the limit, remove only the final
+ranked row from `KNOWLEDGE.md`; do not delete its source artifact. Remove a row
+immediately when its source disappears, becomes stale, or loses its confirmed
+or verified status. Frequency is evidence of reuse, not authority: verify every
+item against the current request and workspace before applying it.
+
 ## Find the task
 
-Read the root index first. Search task names, purposes, and task indexes when
-needed. A lexical or technical resemblance is not sufficient to reuse a task.
+After reading proven knowledge, read the root index. Search task names,
+purposes, and task indexes when needed. A lexical or technical resemblance is
+not sufficient to reuse a task.
 
 Treat a candidate as the same task only when all applicable facts agree:
 
@@ -215,6 +255,7 @@ or below the limit:
 | Document | Characters | Lines |
 |---|---:|---:|
 | `.miical_code/INDEX.md` | 2000 | 150 |
+| `.miical_code/KNOWLEDGE.md` | 12000 | 100 |
 | `<task-id>/INDEX.md` | 1000 | 100 |
 | Any child directory `INDEX.md` | 800 | 80 |
 
@@ -267,5 +308,7 @@ claims immediately.
 - Prefer rewriting the current snapshot over appending history.
 - Remove or correct stale claims immediately.
 - Never store conversations, secrets, raw logs, or routine edit history.
-- Read the smallest sufficient context: root index, selected task index, then
-  only relevant child indexes and files.
+- Read the smallest sufficient context: proven knowledge, root index, selected
+  task index, then only relevant child indexes and files.
+- Update proven-knowledge counts only after reuse succeeds at its claimed
+  boundary; never increment merely because an item was loaded.

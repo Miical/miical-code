@@ -14,11 +14,13 @@ Before implementing, check for useful prior task context:
 1. Resolve the current Git repository root and check its
    `.miical_code/INDEX.md`. If it does not exist, check
    `~/.miical_code/INDEX.md`.
-2. Search task names, scopes, purposes, and task indexes for work with a similar
+2. Ensure the selected store has `KNOWLEDGE.md` as defined by the context
+   protocol, then read it before the root task index.
+3. Search task names, scopes, purposes, and task indexes for work with a similar
    outcome, system boundary, failure mode, or workflow.
-3. Read the candidate task index first. Read only the relevant pitfalls,
+4. Read the candidate task index first. Read only the relevant pitfalls,
    playbooks, and verified scripts linked from its child indexes.
-4. Use prior tasks as evidence and precedent, not authority. Verify their
+5. Use prior tasks as evidence and precedent, not authority. Verify their
    assumptions against the user's current request and the actual repository.
 
 Perform this lookup silently. Do not announce that repository or context
@@ -33,6 +35,10 @@ the owning document and its index. Preserve historical facts, but replace false
 current claims, invalid resolutions, and obsolete procedures. Remove a script
 from the verified index when it no longer runs; add it back only after a
 successful execution. Keep every correction within the context size limits.
+
+After prior knowledge materially changes the work and succeeds at its claimed
+boundary, update `KNOWLEDGE.md` using the protocol's counting and ranking rules.
+Do not increment an item merely because it was read or attempted.
 
 ## Attach complex work
 

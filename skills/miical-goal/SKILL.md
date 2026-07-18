@@ -20,17 +20,19 @@ completely before starting or continuing goal work.
    `~/.miical_code`. Do not announce this discovery step.
 3. When neither default store exists, ask the user to choose the repository,
    global, or a custom location. Do not create a store before that choice.
-4. Inspect the selected `.miical_code/INDEX.md` before executing the goal.
-5. Treat similar tasks only as candidates. Resume an existing task only when
+4. Ensure the selected store has `KNOWLEDGE.md` as defined by the context
+   protocol, then read it before the root task index.
+5. Inspect the selected `.miical_code/INDEX.md` before executing the goal.
+6. Treat similar tasks only as candidates. Resume an existing task only when
    its intended outcome, core work objects, and acceptance boundary identify
    the same task.
-6. Otherwise create a new task directory and register it in the root index.
-7. Print the attachment receipt defined by the context protocol.
-8. Read the selected task's `INDEX.md`. Read child indexes and linked files only
+7. Otherwise create a new task directory and register it in the root index.
+8. Print the attachment receipt defined by the context protocol.
+9. Read the selected task's `INDEX.md`. Read child indexes and linked files only
    when they are relevant to the next action.
-9. Reconcile recorded context with the user's latest instruction and current
+10. Reconcile recorded context with the user's latest instruction and current
    workspace state. Correct stale context before relying on it.
-10. When no native Goal exists, create one from the explicit objective after
+11. When no native Goal exists, create one from the explicit objective after
    selecting its task context. Never replace an unfinished native Goal.
 
 The user's latest instruction and the actual workspace are authoritative.
@@ -52,6 +54,9 @@ state. Changing the process working directory must not change the store.
   pitfalls, proven procedures, and scripts that have actually run successfully.
 - Update the task context after a key milestone and before yielding a
   continuation. Keep `Next Action` singular and executable.
+- When prior knowledge materially changes the goal and succeeds at its claimed
+  boundary, update `KNOWLEDGE.md` once for that item across the task's
+  continuations.
 - When yielding after launching detached work, apply the context protocol's
   detached-work rules. On continuation, refresh the process state before
   relying on the recorded status.
