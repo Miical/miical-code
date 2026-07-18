@@ -127,33 +127,32 @@ Use `<task-id>/INDEX.md` as the first document read when resuming work:
 
 <Stable intended outcome.>
 
-## Scope
-
-<Repository or working directory owned by this task.>
-
 ## Current State
 
 <Current verified state, unresolved boundary, and relevant constraints.>
 
 ## Key Timeline
 
-- YYYY-MM-DD: <Key event and result.>
-
-## Contents
-
-- `pitfalls/`: <What it contains.>
-- `playbooks/`: <What it contains.>
-- `scripts/`: <What it contains.>
+- YYYY-MM-DD HH:MM:SS UTC: <Key event and result.>
 
 ## Next Action
 
 <One concrete action.>
 ```
 
+The task index must not repeat its repository scope or list the fixed
+`pitfalls/`, `playbooks/`, and `scripts/` directories. The selected context
+store, root task catalog, and child indexes already own that information. Keep
+the `Scope` column in the root index because a global store can catalog tasks
+from multiple repositories.
+
 Record only events that change understanding, direction, capability, or
-completion state. Keep at most 20 timeline entries and each entry within 60
-characters. When the limit is reached, merge the oldest related entries into a
-single milestone summary. Never keep a command-by-command log.
+completion state. Use second-precision UTC timestamps backed by logs, file
+times, or another authoritative source. Never invent missing timestamp
+precision; omit an event until its exact time can be established. Keep at most
+20 timeline entries and each entry within 60 characters. When the limit is
+reached, merge the oldest related entries into a single milestone summary.
+Never keep a command-by-command log.
 
 ## Pitfalls
 
