@@ -1,11 +1,11 @@
 ---
 name: miical-help
-description: Show the Miical Harness overview, usage instructions, and currently available Miical skills. Use when the user explicitly invokes $miical-help or asks what Miical Harness can do or how to use it.
+description: Show the Miical Code overview, usage instructions, and currently available Miical skills. Use when the user explicitly invokes $miical-help or asks what Miical Code can do or how to use it.
 ---
 
 # Miical Help
 
-Provide a concise, current guide to Miical Harness. Do not modify files or
+Provide a concise, current guide to Miical Code. Do not modify files or
 external state.
 
 ## Build the guide
@@ -22,14 +22,14 @@ external state.
 
 Use clean Markdown with these sections:
 
-- `# Miical Harness`: explain in one sentence that it provides reusable personal
-  engineering workflows for Codex.
+- `# Miical Code`: explain in one sentence that it packages Miical's engineering
+  judgment into reusable Codex skills, profiles, and decision cases.
 - `## 使用方法`: show that a skill is invoked by typing `$<skill-name>` in any
   Codex conversation, followed by any task-specific request when appropriate.
 - `## 可用能力`: show a table with the invocation and a concise, user-facing
   description derived from each skill's metadata.
 - `## 当前状态`: state how many skills were found. If this help skill is the only
-  one, say that the harness is installed successfully and other capabilities
+  one, say that Miical Code is installed successfully and other capabilities
   have not been added yet.
 
 Do not advertise planned, missing, or unimplemented capabilities as available.
