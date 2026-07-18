@@ -21,6 +21,10 @@ Before implementing, check for useful prior task context:
 4. Use prior tasks as evidence and precedent, not authority. Verify their
    assumptions against the user's current request and the actual repository.
 
+Perform this lookup silently. Do not announce that repository or context
+discovery is starting. When the work does not attach to a task, print no
+attachment receipt.
+
 Do not create a context store or task merely to handle a small, self-contained
 change. If no existing context is useful, continue normally.
 
@@ -44,9 +48,9 @@ Read [`../../workflow/context-management.md`](../../workflow/context-management.
 completely before attaching. Reuse the task already selected by `$miical-goal`
 when one exists. Otherwise resolve the context store using that protocol,
 attach to the same task when a true match exists, or initialize a new task.
-Update its current state, key timeline, and next action after material
-milestones and before yielding. Mark it complete only after validating the
-actual outcome.
+Print the attachment receipt required by that protocol, then update the task's
+current state, key timeline, and next action after material milestones and
+before yielding. Mark it complete only after validating the actual outcome.
 
 Attaching context does not create a native Goal. Use `$miical-goal` when the
 user asks for persistent autonomous execution.

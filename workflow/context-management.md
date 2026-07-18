@@ -4,6 +4,7 @@
 
 - [Locate the store](#locate-the-store)
 - [Find the task](#find-the-task)
+- [Report attachment](#report-attachment)
 - [Root index](#root-index)
 - [Task index](#task-index)
 - [Pitfalls](#pitfalls)
@@ -75,6 +76,29 @@ technology or touches the same module. Do not reuse a completed task for new
 scope; create a new task and link the prior task if its knowledge is useful.
 Initialize the task index and all three child directories and indexes before
 executing a newly created task.
+
+## Report attachment
+
+Resolve the store and task silently. Do not announce that repository, store,
+or task discovery is about to happen.
+
+After selecting or creating the attached task, print this receipt in the
+conversation before beginning its work:
+
+```text
+Miical context attached
+task: <task-id>
+path: <absolute-task-directory>
+```
+
+Use the selected task directory, not the store root, for `path`. Print the
+receipt once when the attachment is established. Do not repeat it during later
+continuations unless the attached task or path changes. When work only consults
+prior context and does not attach, print no attachment receipt.
+
+If no context store exists and user selection is required, ask for that choice
+directly. Do not precede the question with a progress message about searching
+for a repository or context store.
 
 ## Root index
 

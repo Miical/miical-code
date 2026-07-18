@@ -15,8 +15,9 @@ completely before starting or continuing goal work.
 
 1. Inspect the native Goal state. Use its unfinished objective when one exists;
    otherwise use the objective explicitly supplied with this invocation.
-2. Resolve the context store in this order: an explicit user-selected location,
-   `.miical_code` in the current Git repository root, then `~/.miical_code`.
+2. Silently resolve the context store in this order: an explicit user-selected
+   location, `.miical_code` in the current Git repository root, then
+   `~/.miical_code`. Do not announce this discovery step.
 3. When neither default store exists, ask the user to choose the repository,
    global, or a custom location. Do not create a store before that choice.
 4. Inspect the selected `.miical_code/INDEX.md` before executing the goal.
@@ -24,11 +25,12 @@ completely before starting or continuing goal work.
    its intended outcome, core work objects, and acceptance boundary identify
    the same task.
 6. Otherwise create a new task directory and register it in the root index.
-7. Read the selected task's `INDEX.md`. Read child indexes and linked files only
+7. Print the attachment receipt defined by the context protocol.
+8. Read the selected task's `INDEX.md`. Read child indexes and linked files only
    when they are relevant to the next action.
-8. Reconcile recorded context with the user's latest instruction and current
+9. Reconcile recorded context with the user's latest instruction and current
    workspace state. Correct stale context before relying on it.
-9. When no native Goal exists, create one from the explicit objective after
+10. When no native Goal exists, create one from the explicit objective after
    selecting its task context. Never replace an unfinished native Goal.
 
 The user's latest instruction and the actual workspace are authoritative.
