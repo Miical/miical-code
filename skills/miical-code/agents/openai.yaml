@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miical Code"
+  short_description: "Apply Miical standards for design and code quality"
+  default_prompt: "Use $miical-code to implement this task with Miical's design and code quality standards."
