@@ -8,7 +8,7 @@ description: Pursue a user-defined objective through Codex's native Goal lifecyc
 Use Codex's native Goal mechanism for persistence, continuation, budgets, and
 terminal status. Do not build a second task loop or status system.
 
-Read [`references/context-management.md`](references/context-management.md)
+Read [`../../workflow/context-management.md`](../../workflow/context-management.md)
 completely before starting or continuing goal work.
 
 ## Enter the goal

@@ -37,9 +37,9 @@ sequence only to resolve a collision.
 
 ## Locate the store
 
-Resolve one context store before executing the Goal:
+Resolve one context store before executing an attached task or Goal:
 
-1. Use a location explicitly selected by the user for this Goal.
+1. Use a location explicitly selected by the user for this task or Goal.
 2. Otherwise resolve the current Git repository root with
    `git rev-parse --show-toplevel` and check `<repo>/.miical_code`.
 3. If the repository store does not exist, check `~/.miical_code`.
@@ -53,9 +53,10 @@ store. When no current Git repository exists, skip the repository check and
 offer only the global or a custom location.
 
 Select only one store. Do not merge repository and global task catalogs. Keep
-the selected path fixed until the native Goal completes or becomes blocked,
-even if later commands change working directory. Never search above the Git
-root or scan unrelated filesystem locations for another `.miical_code`.
+the selected path fixed until the attached task or native Goal completes or
+becomes blocked, even if later commands change working directory. Never search
+above the Git root or scan unrelated filesystem locations for another
+`.miical_code`.
 
 ## Find the task
 

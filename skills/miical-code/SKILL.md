@@ -5,8 +5,55 @@ description: Implement, fix, and refactor code using Miical's engineering princi
 
 # Miical Code
 
-Follow explicit instructions and conventions in the target repository. Then
-read these references completely before making a material design decision:
+Follow explicit instructions and conventions in the target repository.
+
+## Reuse task context
+
+Before implementing, check for useful prior task context:
+
+1. Resolve the current Git repository root and check its
+   `.miical_code/INDEX.md`. If it does not exist, check
+   `~/.miical_code/INDEX.md`.
+2. Search task names, scopes, purposes, and task indexes for work with a similar
+   outcome, system boundary, failure mode, or workflow.
+3. Read the candidate task index first. Read only the relevant pitfalls,
+   playbooks, and verified scripts linked from its child indexes.
+4. Use prior tasks as evidence and precedent, not authority. Verify their
+   assumptions against the user's current request and the actual repository.
+
+Do not create a context store or task merely to handle a small, self-contained
+change. If no existing context is useful, continue normally.
+
+When current evidence shows that referenced context is wrong or stale, correct
+the owning document and its index. Preserve historical facts, but replace false
+current claims, invalid resolutions, and obsolete procedures. Remove a script
+from the verified index when it no longer runs; add it back only after a
+successful execution. Keep every correction within the context size limits.
+
+## Attach complex work
+
+Attach the work to a `.miical_code` task when durable context would materially
+improve execution, especially when it:
+
+- is likely to require repeated user interaction or multiple continuations;
+- has several dependent implementation, migration, or validation stages;
+- contains evolving decisions, investigations, or unresolved risks; or
+- produces reusable pitfalls, playbooks, or verified scripts.
+
+Read [`../../workflow/context-management.md`](../../workflow/context-management.md)
+completely before attaching. Reuse the task already selected by `$miical-goal`
+when one exists. Otherwise resolve the context store using that protocol,
+attach to the same task when a true match exists, or initialize a new task.
+Update its current state, key timeline, and next action after material
+milestones and before yielding. Mark it complete only after validating the
+actual outcome.
+
+Attaching context does not create a native Goal. Use `$miical-goal` when the
+user asks for persistent autonomous execution.
+
+## Apply the engineering profile
+
+Read these references completely before making a material design decision:
 
 - [`../../profile/principles.md`](../../profile/principles.md)
 - [`../../profile/judgments.md`](../../profile/judgments.md)
