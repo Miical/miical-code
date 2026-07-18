@@ -52,6 +52,9 @@ state. Changing the process working directory must not change the store.
   pitfalls, proven procedures, and scripts that have actually run successfully.
 - Update the task context after a key milestone and before yielding a
   continuation. Keep `Next Action` singular and executable.
+- When yielding after launching detached work, apply the context protocol's
+  detached-work rules. On continuation, refresh the process state before
+  relying on the recorded status.
 - Validate every completion condition with current evidence before completing
   the native Goal. Mark the task complete in `.miical_code/INDEX.md` only when
   the native objective is complete.

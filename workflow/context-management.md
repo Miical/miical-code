@@ -11,6 +11,7 @@
 - [Playbooks](#playbooks)
 - [Scripts](#scripts)
 - [Size limits](#size-limits)
+- [Detached work](#detached-work)
 - [Update discipline](#update-discipline)
 
 Maintain task-scoped working memory under `.miical_code` at the context root.
@@ -233,6 +234,30 @@ When an index exceeds a limit, compress it before continuing work:
 Do not solve overflow by silently dropping tasks or files from an index. If the
 irreducible inventory itself cannot fit, split it by a clear category and make
 the parent index describe each resulting child index within the same limits.
+
+## Detached work
+
+When yielding after starting a background process, distinguish these claims:
+
+- launch succeeded;
+- the process was running at the last check; and
+- the process completed successfully.
+
+Record the durable job identifier, exact launch time, last checked time and
+state, verification performed, and one executable status or artifact check.
+Never describe a job as currently running or healthy without a timestamped
+check, and never use successful launch as evidence that its full workflow
+completed.
+
+Keep the task `active` when its objective requires the background outcome. A
+launch-only objective may be `complete` after launch verification, but its
+current state must still say that the background outcome is unverified. Do not
+promote a detached procedure to a playbook until it succeeds at the claimed
+boundary.
+
+On continuation, inspect the authoritative process state and artifacts before
+relying on the recorded status. Correct exited, failed, or otherwise stale
+claims immediately.
 
 ## Update discipline
 
