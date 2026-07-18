@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miical Commit"
+  short_description: "Create a focused and verified local Git commit"
+  default_prompt: "Use $miical-commit to commit the current coherent changes locally."
