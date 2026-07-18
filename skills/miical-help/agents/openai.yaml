@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miical Help"
+  short_description: "Discover and use the available Miical skills"
+  default_prompt: "Use $miical-help to show me how to use Miical Harness."
