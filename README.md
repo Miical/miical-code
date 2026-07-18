@@ -31,6 +31,7 @@ $miical-code Refactor this module
 $miical-commit
 $miical-goal Complete this migration and continue until it is verified
 $miical-help
+$miical-update Analyze why this task required follow-up instructions
 ```
 
 | Skill | Purpose |
@@ -39,6 +40,7 @@ $miical-help
 | `$miical-commit` | Review changes and create a local commit after final confirmation |
 | `$miical-goal` | Use Codex Goal to pursue long-running objectives |
 | `$miical-help` | List the currently available Miical Skills |
+| `$miical-update` | Improve Miical Code from evidence in the current conversation |
 
 ## Context
 

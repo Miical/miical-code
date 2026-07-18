@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miical Update"
+  short_description: "Improve Miical Code from conversation evidence"
+  default_prompt: "Use $miical-update to analyze this conversation and propose an improvement to Miical Code."
