@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miical Goal"
+  short_description: "Run persistent goals with Miical quality and context"
+  default_prompt: "Use $miical-goal to pursue this goal persistently with explicit task context."
