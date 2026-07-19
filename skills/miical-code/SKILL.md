@@ -19,7 +19,9 @@ Before implementing, check for useful prior task context:
 3. Search task names, scopes, purposes, and task indexes for work with a similar
    outcome, system boundary, failure mode, or workflow.
 4. Read the candidate task index first. Read only the relevant pitfalls,
-   playbooks, and verified scripts linked from its child indexes.
+   playbooks, and verified scripts linked from its child indexes. Follow every
+   explicit cross-task reference that concerns the boundary you will act on;
+   the reference is routing, not a substitute for its evidence.
 5. Use prior tasks as evidence and precedent, not authority. Verify their
    assumptions against the user's current request and the actual repository.
 
@@ -56,7 +58,10 @@ when one exists. Otherwise resolve the context store using that protocol,
 attach to the same task when a true match exists, or initialize a new task.
 Print the attachment receipt required by that protocol, then update the task's
 current state, key timeline, and next action after material milestones and
-before yielding. Mark it complete only after validating the actual outcome.
+before yielding. Run the protocol's complete context-closure procedure; a task
+index update alone does not replace qualifying pitfall, playbook, script, or
+proven-knowledge updates. Mark it complete only after validating the actual
+outcome.
 
 Attaching context does not create a native Goal. Use `$miical-goal` when the
 user asks for persistent autonomous execution.

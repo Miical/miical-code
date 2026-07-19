@@ -13,6 +13,7 @@
 - [Scripts](#scripts)
 - [Size limits](#size-limits)
 - [Detached work](#detached-work)
+- [Context closure](#context-closure)
 - [Update discipline](#update-discipline)
 
 Maintain task-scoped working memory under `.miical_code` at the context root.
@@ -117,6 +118,12 @@ technology or touches the same module. Do not reuse a completed task for new
 scope; create a new task and link the prior task if its knowledge is useful.
 Initialize the task index and all three child directories and indexes before
 executing a newly created task.
+
+Treat an explicit reference from the selected task index or one of its child
+indexes to another task as a routing instruction, not as sufficient context.
+Before acting on the referenced system boundary, read that task's index and
+the relevant child index and linked artifacts. A note such as "see prior task"
+does not replace reading the evidence it identifies.
 
 ## Report attachment
 
@@ -299,6 +306,29 @@ boundary.
 On continuation, inspect the authoritative process state and artifacts before
 relying on the recorded status. Correct exited, failed, or otherwise stale
 claims immediately.
+
+## Context closure
+
+After each material milestone and before yielding attached work, reconcile the
+new evidence with every context surface it qualifies for:
+
+1. Write each confirmed cause and effective resolution to its owning pitfall
+   document and child index.
+2. Write each procedure that succeeded at its claimed real boundary to its
+   owning playbook document and child index.
+3. Store and index each reusable script only after it runs successfully with
+   documented inputs, outputs, and invocation.
+4. Update `KNOWLEDGE.md` when a prior artifact materially changed the work and
+   current evidence confirmed that reuse.
+5. Rewrite the task's current state, key timeline, and one executable next
+   action. Include all detached-work fields when applicable.
+6. Update the root task index when status or update date changed, then validate
+   index inventories, links, character limits, line limits, and timeline entry
+   lengths.
+
+Updating only the task `INDEX.md` is not a complete closure when any new
+evidence qualifies for a pitfall, playbook, script, or proven-knowledge entry.
+Do not create empty artifacts merely to satisfy this checklist.
 
 ## Update discipline
 

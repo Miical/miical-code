@@ -29,7 +29,8 @@ completely before starting or continuing goal work.
 7. Otherwise create a new task directory and register it in the root index.
 8. Print the attachment receipt defined by the context protocol.
 9. Read the selected task's `INDEX.md`. Read child indexes and linked files only
-   when they are relevant to the next action.
+   when they are relevant to the next action. Follow explicit references to a
+   prior task when they concern the boundary you will act on.
 10. Reconcile recorded context with the user's latest instruction and current
    workspace state. Correct stale context before relying on it.
 11. When no native Goal exists, create one from the explicit objective after
@@ -52,8 +53,10 @@ state. Changing the process working directory must not change the store.
   `$miical-code`. Do not duplicate its engineering rules here.
 - Record only durable context: key milestones, confirmed findings, resolved
   pitfalls, proven procedures, and scripts that have actually run successfully.
-- Update the task context after a key milestone and before yielding a
-  continuation. Keep `Next Action` singular and executable.
+- Run the context protocol's complete context closure after each key milestone
+  and before yielding a continuation. Updating the task index alone is
+  insufficient when evidence qualifies for a pitfall, playbook, script, or
+  proven-knowledge entry. Keep `Next Action` singular and executable.
 - When prior knowledge materially changes the goal and succeeds at its claimed
   boundary, update `KNOWLEDGE.md` once for that item across the task's
   continuations.
